@@ -1,0 +1,76 @@
+
+body {
+    background-image: url("world.png");
+
+    animation: map 6s linear infinite;
+}
+@keyframes map {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: -1200px 0;
+    }
+}
+
+
+p{
+    color: yellow;
+    font-size: 20px;
+    font-family: Lobster, cursive;
+}
+h1{
+    display: grid;
+    color: aqua;
+    font-family: "Lobster", sans-serif;
+    justify-content: center;
+}
+.card-area{
+    display: grid;
+    grid-template-columns: repeat(3, 150px);
+    grid-template-rows: repeat(3, 150px);
+    grid-gap: 1em;
+    grid-auto-rows: minmax(100px, auto);
+    align-content: center;
+    justify-content: center;
+}
+.box{
+    width: 150px;
+    height: 150px;
+    display: flex;
+    background: linear-gradient(#165146,#AC36D8);
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    z-index: 2;
+}
+.back{
+    background: linear-gradient(#3553F4,#BDD4D8);
+    z-index: 1;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(180deg);
+    border-radius: 10px;
+}
+.card{
+    width: 150px;
+    height: 150px;
+    position: relative;
+    display: flex;
+    transition: all 0.8s linear;
+    transform-style: preserve-3d;
+    justify-content: center;
+}
+.card:hover {
+    transform: rotateY(-180deg);
+}
+.container{
+    perspective: 1000px;
+}
+
+
